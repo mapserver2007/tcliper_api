@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tcliper/locale/tcliper.dtd">
+<prefwindow id="tcliperManager" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&tcliper.manage.title;" button="accept,cancel" ondialogaccept="return Tcliper.duplicateCheckKeyEvent();"
+	width="505" height="320">
+	<script type="application/x-javascript" src="chrome://tcliper/content/tcliper.js"/>
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="tcliper-bundle" src="chrome://tcliper/locale/tcliper.properties" />
+	</stringbundleset>
+	<prefpane id="tcliperPaneMain" label="&tcliper.prefpane.tab1;" image="chrome://tcliper/skin/pane1.png">
+		<preferences>
+			<preference id="tcliperManagePrefApiKey" name="extensions.tcliper.apikey" type="string"/>
+			<preference id="tcliperManagePrefKeyEventPublic" name="extensions.tcliper.keyevent.pub" type="string"/>
+			<preference id="tcliperManagePrefKeyEventPrivate" name="extensions.tcliper.keyevent.prv" type="string"/>
+			<preference id="tcliperManagePrefKeyEventCtrl" name="extensions.tcliper.keyeventopt.ctrl" type="bool"/>
+			<preference id="tcliperManagePrefKeyEventAlt" name="extensions.tcliper.keyeventopt.alt" type="bool"/>
+			<preference id="tcliperManagePrefKeyEventShift" name="extensions.tcliper.keyeventopt.shift" type="bool"/>
+		</preferences>
+		<groupbox>
+			<caption label="&tcliper.manage.menu.apikey;"/>
+			<hbox align="center">
+				<textbox id="apikey" preference="tcliperManagePrefApiKey" flex="1"/>
+				<separator class="thin"/>
+			</hbox>
+		</groupbox>
+		<groupbox>
+			<caption label="&tcliper.manage.menu.keyevent;"/>
+			<hbox align="center">
+				<label value="&tcliper.manage.menu.keyevent.pub;"/>
+				<menulist id="tcliperManageKeyEventPublic" preference="tcliperManagePrefKeyEventPublic">
+					<menupopup>
+						<menuitem value="Q" label="Q"/>
+						<menuitem value="W" label="W"/>
+						<menuitem value="Z" label="Z"/>
+						<menuitem value="X" label="X"/>
+					</menupopup>
+				</menulist>
+				<label value="&tcliper.manage.menu.keyevent.prv;"/>
+				<menulist id="tcliperManageKeyEventPrivate" preference="tcliperManagePrefKeyEventPrivate">
+					<menupopup>
+						<menuitem value="Q" label="Q"/>
+						<menuitem value="W" label="W"/>
+						<menuitem value="Z" label="Z"/>
+						<menuitem value="X" label="X"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+		</groupbox>
+		<groupbox>
+			<caption label="&tcliper.manage.menu.keyeventopt;"/>
+			<hbox align="center">
+				<checkbox label="&tcliper.manage.menu.keyeventopt.ctrl;" id="tcliperManageMenuKeyEventCtrl" preference="tcliperManagePrefKeyEventCtrl"/>
+				<checkbox label="&tcliper.manage.menu.keyeventopt.alt;" id="tcliperManageMenuKeyEventAlt" preference="tcliperManagePrefKeyEventAlt"/>
+				<checkbox label="&tcliper.manage.menu.keyeventopt.shift;" id="tcliperManageMenuKeyEventShift" preference="tcliperManagePrefKeyEventShift"/>
+			</hbox>
+		</groupbox>
+	</prefpane>
+	<prefpane id="tcliperPaneOther" label="&tcliper.prefpane.tab2;" image="chrome://tcliper/skin/pane2.png">
+		<checkbox label="&tcliper.manage.menu.mail;"/>
+	</prefpane>
+</prefwindow>

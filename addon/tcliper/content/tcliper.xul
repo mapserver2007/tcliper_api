@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://tcliper/skin/tcliper.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tcliper/locale/tcliper.dtd">
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://tcliper/content/tcliper.js" />
+	<script type="application/x-javascript" src="chrome://tcliper/content/lib/accelimation.js" />
+	<script>Tcliper.init();</script>
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="tcliper-bundle" src="chrome://tcliper/locale/tcliper.properties" />
+	</stringbundleset>
+	<statusbar id="status-bar">
+		<statusbarpanel
+			id="tcliperPanel"
+			class="tcliperPanelImageOn"
+			context="tcliperStatusMenu"
+			tooltiptext="&tcliper.tooltip;"
+			onclick="Tcliper.switchMode(event);">
+			<label id="tcliperStatusLabel"
+				   collapsed="true"
+				   crop="end"
+				   style="width:0px; margin:0"/>
+			<image tooltiptext="&tcliper.tooltip;" id="tcliperPanelImage"/>
+			<popup id="tcliperStatusMenu"
+				   position="before_end"
+				   onpopupshowing="event.stopPropagation();">
+				<menuitem
+					id="tcliperMenuHome"
+					label="&tcliper.context.home;"
+					accesskey="&tcliper.context.home.accesskey;"
+					oncommand="Tcliper.moveHomePage();"
+					onclick="event.stopPropagation();"
+					onpopupshowing="event.stopPropagation();"/>
+				<menuseparator/>
+				<menuitem
+					id="tcliperMenuItem1"
+					label="&tcliper.context.item1;"
+					accesskey="&tcliper.context.item1.accesskey;"
+					oncommand="Tcliper.showContextMenu();"
+					onclick="event.stopPropagation();"
+					onpopupshowing="event.stopPropagation();"/>
+			</popup>
+		</statusbarpanel>
+	</statusbar>
+</overlay>

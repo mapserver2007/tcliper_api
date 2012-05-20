@@ -1,0 +1,49 @@
+デプロイ時の注意
+
+・CSSパスを書き換える
+development:/images/xxx
+production:/tcliper/public/images/xxx
+
+・Proxyパス
+  ProxyPass /tcliper http://192.168.0.103:3001/tcliper
+  ProxyPassReverse /tcliper http://192.168.0.103:3001/tcliper
+  
+ ・routes.rb
+  # Main Routing
+  map.connect '/tcliper', :controller => 'tcliper', :action => 'index'
+  
+  # Edit Routing
+  map.connect '/edit', :controller => 'tcliper', :action => 'edit'
+  
+  
+ 以下メモ
+ うまくいくぱたーん
+   ProxyPass /chocolab http://192.168.0.103:3000/chocolab/
+  ProxyPass /tcliper/ http://192.168.0.103:3001/tcliper/
+  ProxyPassReverse /chocolab http://192.168.0.103:3000/chocolab/
+  ProxyPassReverse /tcliper/ http://192.168.0.103:3001/tcliper/
+  
+   # Main Routing
+  map.connect '/tcliper', :controller => 'tcliper', :action => 'index'
+  
+  # Edit Routing
+  map.connect '/edit', :controller => 'tcliper', :action => 'edit'
+  
+  
+  (prefix: /tcliper) なし
+  
+  ちょっとわかったかも
+ 1. httpd.conf(上記設定)
+ 2. routes.rb
+ 3. mongrel_cluster.yml
+ 4. apache起動→mongrel起動
+ 5. /tcliper/tcliperにアクセス(表示されたら次へ)
+ 6. mongrel_cluster.ymlのprefixを消す
+ 7. mongrel再起動
+ 8. /tcliperへアクセス
+ 
+ いみわからん。
+  
+ 
+  
+  

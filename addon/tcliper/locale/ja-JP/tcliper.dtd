@@ -1,0 +1,17 @@
+<!ENTITY tcliper.tooltip "tcliper">
+<!ENTITY tcliper.context.item1 "APIキーを設定">
+<!ENTITY tcliper.context.item1.accesskey "A">
+<!ENTITY tcliper.context.home "tcliperのページへ移動">
+<!ENTITY tcliper.context.home.accesskey "H">
+<!ENTITY tcliper.manage.title "tcliper設定メニュー">
+<!ENTITY tcliper.manage.menu.apikey "APIキー設定">
+<!ENTITY tcliper.manage.menu.keyevent "キーボードイベント割り当て設定">
+<!ENTITY tcliper.manage.menu.keyevent.pub "パブリックキー">
+<!ENTITY tcliper.manage.menu.keyevent.prv "プライベートキー">
+<!ENTITY tcliper.manage.menu.keyeventopt "キーボードイベント割り当て設定(オプション)">
+<!ENTITY tcliper.manage.menu.keyeventopt.ctrl "Ctrl">
+<!ENTITY tcliper.manage.menu.keyeventopt.alt "Alt">
+<!ENTITY tcliper.manage.menu.keyeventopt.shift "Shift">
+<!ENTITY tcliper.manage.menu.mail "クリップ情報をメール送信する(未実装)">
+<!ENTITY tcliper.prefpane.tab1 "一般">
+<!ENTITY tcliper.prefpane.tab2 "その他">

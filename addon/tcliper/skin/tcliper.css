@@ -1,0 +1,7 @@
+.tcliperPanelImageOn {
+	list-style-image: url("chrome://tcliper/skin/tcliper_on.png");
+}
+
+.tcliperPanelImageOff {
+	list-style-image: url("chrome://tcliper/skin/tcliper_off.png")!important;
+}
